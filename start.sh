@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Ensure the virtualenv created during the install phase is on PATH,
+# even if this shell doesn't source /root/.profile.
+export PATH="/opt/venv/bin:$PATH"
+
 # This script runs both the Flask web server and the background worker
 # inside a SINGLE Railway service, sharing ONE persistent volume.
 #
